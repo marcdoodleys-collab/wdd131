@@ -3,10 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wdd131</title>
+    <meta name="author" content="Marc-Doodley SEMETUS">
+    <meta name="Description" content="WDD131 - Web dynamic fundamentals. Marc-Doodley SEMETUS. HTML, CSS, JavaScript, web development">
+    <title>WDD131 - Dynamic Web Fundamentals - Marc-Doodley SEMETUS</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js"defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Wdd131</h1>
-    <p>Welcome to the Wdd131 course!</p>
+    <header>
+        <span id="course-title">WDD131 - Dynamic Web Fundamentals</span>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/marc-doodley" target="_blank">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank">Scriptures</a></li>
+                <li><a href="#" target="_blank">Final project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Marc-Doodley SEMETUS</h1>
+        <section class="card">
+            <h2>About Me</h2>
+
+            <img src="images/profile.jpeg" alt="Profile picture">
+
+            <p>
+                My name is Marc-Doodley Semetus. I am a student in economics
+                and I also enjoy web development, trading, and technology.
+                I live in Haiti and I enjoy learning new skills every day.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>My Country</h2>
+
+            <img src="images/haiti.jpg" alt="Haiti landscape">
+
+            <p>
+                Haiti is a beautiful Caribbean country with a rich culture,
+                history, music, and traditions. It is known for its resilience
+                and vibrant people.
+            </p>
+        </section>
+        <!-- CARD 2 -->
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/"
+                target="_blank">
+                MDN Web Docs
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.w3schools.com/"
+                target="_blank">
+                W3Schools
+            </a>
+        </li>
+
+        <li>
+            <a href="https://css-tricks.com/"
+                target="_blank">
+                CSS Tricks
+            </a>
+        </li>
+
+        <li>
+            <a href="https://codepen.io/"
+                target="_blank">
+                CodePen
+            </a>
+        </li>
+
+        <li>
+            <a href="https://stackoverflow.com/"
+                target="_blank">
+                Stack Overflow
+            </a>
+        </li>
+
+        <li>
+            <a href="https://github.com/"
+                target="_blank">
+                GitHub
+            </a>
+        </li>
+    </ul>
+
+</section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="currentyear"></span>
+            Marc-Doodley Semetus | Haiti
+        </p>
+
+        <p id="lastModified"></p>
+
+    </footer>
+
 </body>
 </html>

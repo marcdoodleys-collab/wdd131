@@ -1,0 +1,405 @@
+/* =====================================================
+   VARIABLES CSS
+   ===================================================== */
+
+:root {
+  --primary-dark: #1B4965;
+  --primary-medium: #2E5F7F;
+  --accent-blue: #3A7CA5;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --text-gray: #666;
+  --bg-light: #f5f5f5;
+  --bg-white: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+}
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+/* =====================================================
+   TYPOGRAPHIE
+   ===================================================== */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-gray);
+  line-height: 1.8;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+#course-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  padding-bottom: 0.25rem;
+}
+
+nav a:hover {
+  color: var(--text-light);
+  text-decoration: none;
+  color: #ffeb3b;
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+main {
+  max-width: 1000px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-lg);
+}
+
+main > h1 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card {
+  background-color: var(--bg-white);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.card h2 {
+  background-color: var(--primary-medium);
+  color: var(--text-light);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.card > *:not(h2) {
+  padding: var(--spacing-lg);
+  display: block;
+}
+
+.card p {
+  padding: var(--spacing-lg);
+  margin-bottom: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* =====================================================
+   LISTES DANS LES CARDS
+   ===================================================== */
+
+.card ul {
+  list-style: none;
+  padding: var(--spacing-lg);
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--text-gray);
+}
+
+.card ul li:before {
+  content: "•";
+  color: var(--accent-blue);
+  font-weight: bold;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+}
+
+.card ul a {
+  color: #0066cc;
+}
+
+.card ul a:hover {
+  color: var(--primary-medium);
+}
+
+/* =====================================================
+   MULTI-CARD LAYOUT (optionnel)
+   ===================================================== */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #ffeb3b;
+}
+
+footer a:hover {
+  color: var(--text-light);
+  text-decoration: underline;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  #course-title {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: var(--spacing-md);
+    justify-content: center;
+  }
+
+  main {
+    padding: 0 var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+  }
+
+  .card {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .card h2 {
+    padding: var(--spacing-md);
+    font-size: 1.2rem;
+  }
+
+  .card > *:not(h2) {
+    padding: var(--spacing-md);
+  }
+
+  .card p {
+    padding: var(--spacing-md);
+  }
+
+  .card ul {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  header {
+    padding: var(--spacing-sm);
+  }
+
+  nav ul {
+    gap: var(--spacing-sm);
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 0 var(--spacing-sm);
+    margin: var(--spacing-md) auto;
+  }
+
+  .card h2 {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+  }
+
+  .card > *:not(h2) {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .card p {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .card ul {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  footer {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}
+
+/* =====================================================
+   UTILITAIRES
+   ===================================================== */
+
+/* Accessibilité */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Section avec contenu mixte (texte + image côte à côte) */
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: var(--spacing-lg);
+  align-items: start;
+  padding: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Texte justifié pour les paragraphes */
+.card p {
+  text-align: justify;
+}
