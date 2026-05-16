@@ -1,22 +1,22 @@
-// Références DOM
+// Sélection des éléments du DOM
 const input = document.querySelector('#favchap');
 const button = document.querySelector('button');
 const list = document.querySelector('#list');
 
-// Événement du bouton
+// Événement du bouton Ajouter
 button.addEventListener('click', function () {
 
-    // Vérifie si le champ n'est pas vide
+    // Vérifie que le champ n'est pas vide
     if (input.value.trim() !== '') {
 
         // Création des éléments
         const li = document.createElement('li');
         const deleteButton = document.createElement('button');
 
-        // Ajouter le texte du chapitre
+        // Ajout du texte
         li.textContent = input.value;
 
-        // Bouton supprimer
+        // Texte du bouton supprimer
         deleteButton.textContent = '❌';
 
         // Accessibilité
@@ -28,16 +28,21 @@ button.addEventListener('click', function () {
         // Ajouter le li dans la liste
         list.append(li);
 
-        // Effacer le champ input
-        input.value = '';
-
-        // Remettre le curseur dans l'input
-        input.focus();
-
-        // Supprimer un élément
+        // Événement supprimer
         deleteButton.addEventListener('click', function () {
             list.removeChild(li);
             input.focus();
         });
+
+        // Nettoyer le champ texte
+        input.value = '';
+
+        // Remettre le curseur dans le champ
+        input.focus();
+
+    } else {
+
+        // Si vide → remettre le focus
+        input.focus();
     }
 });
