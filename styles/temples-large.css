@@ -1,0 +1,63 @@
+/* ================================================
+   temples-large.css — Larger screens (min-width: 768px)
+   WDD 131 – Week 02 | Temple Album
+   ================================================ */
+
+/* ---------- Hide hamburger ---------- */
+#hamburger {
+  display: none;
+}
+
+/* ---------- Nav — horizontal, always visible ---------- */
+#main-nav {
+  display: flex !important;
+  flex-direction: row;
+  width: auto;
+  padding: 0;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+#main-nav a {
+  font-size: 0.88rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+#main-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-decoration: underline;
+}
+
+/* ---------- Header inner padding ---------- */
+.header-inner {
+  padding: 0.75rem 2rem;
+}
+
+/* ---------- Main padding ---------- */
+main {
+  padding: 2rem 2rem;
+}
+
+main h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.8rem;
+}
+
+/* ---------- Gallery — 3 colonnes sur grands écrans ---------- */
+.gallery {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ---------- Images plus hautes ---------- */
+figure img {
+  height: 200px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+}
