@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="author" content="Marc-Doodley SEMETUS">
+    <meta name="description" content="Discover Haiti — the Pearl of the Caribbean. Explore its history, culture, and natural beauty.">
+    <title>Haïti</title>
+
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<header>
+    <h1>Haïti</h1>
+  </header>
+ 
+  <!-- ========== MAIN ========== -->
+  <main>
+ 
+    <!-- HERO IMAGE -->
+    <section class="hero">
+      <!--
+        Put my images in an "images/" folder next to place.html:
+          images/hero-small.webp  →  ~600px wide  (mobile)
+          images/hero-large.webp  →  ~1200px wide (desktop)
+        Free photos: unsplash.com → search "Haiti" or "Citadelle Laferriere" which i chose
+      -->
+      <picture>
+        <source media="(min-width: 640px)" srcset="images/citadelle-large.webp" />
+        <img
+          src="images/citadelle.webp"
+          alt="Beautiful view of Haiti's landscape and coastline"
+          class="hero-img"
+          width="1200"
+          height="600"
+        />
+      </picture>
+    </section>
+ 
+    <!-- DATA SECTION -->
+    <section class="data-section">
+      <h2>Data</h2>
+      <table class="data-table">
+        <tbody>
+          <tr><th scope="row">Area:</th>        <td>27,750 sq km</td></tr>
+          <tr><th scope="row">Population:</th>  <td>11,470,261</td></tr>
+          <tr><th scope="row">Capital:</th>     <td>Port-au-Prince</td></tr>
+          <tr><th scope="row">Languages:</th>   <td>French, Haitian Creole</td></tr>
+          <tr><th scope="row">Currency:</th>    <td>Haitian Gourde (HTG)</td></tr>
+          <tr><th scope="row">Time Zone:</th>   <td>UTC-5 (EST)</td></tr>
+          <tr><th scope="row">Calling Code:</th><td>+509</td></tr>
+          <tr><th scope="row">Internet TLD:</th><td>.ht</td></tr>
+        </tbody>
+      </table>
+    </section>
+ 
+    <!-- WEATHER SECTION -->
+    <section class="weather-section">
+      <h2 class="weather-heading">Weather</h2>
+ 
+      <!-- SVG icon — shown in mobile view -->
+      <div class="weather-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="96" height="96">
+          <!-- Sun -->
+          <circle cx="38" cy="36" r="14" fill="#FFD700"/>
+          <!-- Sun rays -->
+          <line x1="38" y1="14" x2="38" y2="8"  stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="38" y1="58" x2="38" y2="64" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="16" y1="36" x2="10" y2="36" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="60" y1="36" x2="66" y2="36" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="22" y1="20" x2="18" y2="16" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="54" y1="52" x2="58" y2="56" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="54" y1="20" x2="58" y2="16" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="22" y1="52" x2="18" y2="56" stroke="#FFD700" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Cloud body -->
+          <ellipse cx="62" cy="66" rx="22" ry="14" fill="white" stroke="#d1d5db" stroke-width="2"/>
+          <ellipse cx="46" cy="70" rx="16" ry="13" fill="white" stroke="#d1d5db" stroke-width="2"/>
+          <ellipse cx="76" cy="70" rx="14" ry="12" fill="white" stroke="#d1d5db" stroke-width="2"/>
+          <rect x="30" y="68" width="50" height="16" rx="6" fill="white"/>
+        </svg>
+      </div>
+ 
+      <table class="data-table">
+        <tbody>
+          <tr><th scope="row">Temperature:</th> <td>32 °C</td></tr>
+          <tr><th scope="row">Conditions:</th>  <td>Partly Cloudy</td></tr>
+          <tr><th scope="row">Wind:</th>        <td>15 km/h</td></tr>
+          <tr><th scope="row">Wind Chill:</th>  <td id="wind-chill">Calculating…</td></tr>
+        </tbody>
+      </table>
+    </section>
+ 
+  </main>
+ 
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>
+      &copy;<span id="current-year"></span>
+      &#127798; Marc-Doodley &bull; Haïti &#127798;
+    </p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+  </footer>
+ 
+</body>
+</html>

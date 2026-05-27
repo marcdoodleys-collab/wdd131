@@ -1,0 +1,229 @@
+/* ============================================================
+   place.css — Haïti Country Page
+   WDD 131 · W03 Assignment
+   ============================================================ */
+
+/* ---- 1. CSS CUSTOM PROPERTIES (Global Variables) ---- */
+:root {
+  --color-primary:    #00209F;   /* Haiti flag blue  */
+  --color-secondary:  #D21034;   /* Haiti flag red   */
+  --color-accent:     #F5B700;   /* Gold highlight   */
+  --color-white:      #FFFFFF;
+  --color-light:      #F4F4F4;
+  --color-dark:       #1a1a2e;
+  --color-text:       #222222;
+  --color-border:     #cccccc;
+  --color-footer-bg:  #D21034;
+
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body:    'Open Sans', Arial, sans-serif;
+
+  --max-width:    900px;
+  --section-pad:  1.5rem;
+}
+
+/* ---- 2. RESET ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---- 3. HEADER ---- */
+header {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.2rem var(--section-pad);
+  border-bottom: 6px solid var(--color-secondary);
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---- 4. MAIN — mobile: single column ---- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---- 5. HERO ---- */
+.hero {
+  width: 100%;
+  line-height: 0; /* remove gap under image */
+}
+
+.hero-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  /* Gradient fallback when image is missing */
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+/* ---- 6. SHARED SECTION STYLES ---- */
+.data-section,
+.weather-section {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: var(--section-pad);
+  margin: 1.2rem;
+  text-align: center;
+}
+
+.data-section h2,
+.weather-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* ---- 7. DATA TABLE ---- */
+.data-table {
+  width: auto;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: right;
+  padding-right: 0.8rem;
+  white-space: nowrap;
+}
+
+.data-table td {
+  color: #444;
+}
+
+/* ---- 8. WEATHER ---- */
+
+/* SVG weather icon — visible in MOBILE only */
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem auto 1.2rem;
+}
+
+/* Wider view: hide SVG, show ⛅ emoji via pseudo-element */
+.weather-heading::after {
+  content: " ⛅";
+}
+
+/* ---- 9. FOOTER ---- */
+footer {
+  background: var(--color-footer-bg);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem var(--section-pad);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  border-top: 5px solid var(--color-primary);
+}
+
+footer p:last-child {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   MEDIA QUERY — WIDER VIEW (≥ 640px)
+   Layout: [Data  |  Hero Image]  then  Weather below
+   ============================================================ */
+@media (min-width: 640px) {
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "hero  hero"
+      "data  weather";
+    gap: 0;
+  }
+
+  /* Hero stays full width across both columns */
+  .hero {
+    grid-area: hero;
+  }
+
+  .hero-img {
+    height: 400px;
+  }
+
+  /* Data — left column */
+  .data-section {
+    grid-area: data;
+    margin: 1rem 0.6rem 1rem 1rem;
+    text-align: left;
+  }
+
+  .data-section h2 {
+    text-align: center;
+  }
+
+  /* Weather — right column */
+  .weather-section {
+    grid-area: weather;
+    margin: 1rem 1rem 1rem 0.6rem;
+    text-align: left;
+  }
+
+  .weather-section h2 {
+    text-align: center;
+  }
+
+  /* Hide the SVG icon in wider view (pseudo-element takes over) */
+  .weather-icon {
+    display: none;
+  }
+
+}
+
+/* ============================================================
+   MEDIA QUERY — LARGE VIEW (≥ 900px)
+   ============================================================ */
+@media (min-width: 900px) {
+
+  .hero-img {
+    height: 480px;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .data-section,
+  .weather-section {
+    padding: 2rem;
+  }
+}
