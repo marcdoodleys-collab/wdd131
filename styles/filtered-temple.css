@@ -253,3 +253,67 @@ footer {
   letter-spacing: 0.03em;
   margin-top: auto;
 }
+
+/* ================================================
+   Responsive — min-width: 768px (larger screens)
+   ================================================ */
+@media (min-width: 768px) {
+
+  /* Hide hamburger, show horizontal nav */
+  #hamburger {
+    display: none;
+  }
+
+  #main-nav {
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+    gap: 0.2rem;
+    align-items: center;
+  }
+
+  /* Header inner */
+  .header-inner {
+    padding: 0.7rem 2rem;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Main padding */
+  main {
+    padding: 2rem 2rem 3rem;
+  }
+
+  /* Gallery — responsive multi-column */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+  }
+
+  /* Stagger animation on cards */
+  .temple-card:nth-child(2) { animation-delay: 0.05s; }
+  .temple-card:nth-child(3) { animation-delay: 0.10s; }
+  .temple-card:nth-child(4) { animation-delay: 0.15s; }
+  .temple-card:nth-child(5) { animation-delay: 0.20s; }
+  .temple-card:nth-child(6) { animation-delay: 0.25s; }
+
+  /* Taller images */
+  .temple-card img {
+    height: 210px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1rem 2rem;
+    font-size: 0.82rem;
+  }
+
+}
