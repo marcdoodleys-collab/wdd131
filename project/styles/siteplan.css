@@ -100,6 +100,19 @@ header {
     min-width: max-content;
 }
 
+/* Company Logo */
+.logo-img {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Optional old emoji logo style */
 .logo-emoji {
     width: 52px;
     height: 52px;
@@ -180,11 +193,14 @@ section::before {
     background: linear-gradient(180deg, var(--blue), var(--red), var(--green));
 }
 
+/* Corrected selector */
 section > * {
     position: relative;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     color: var(--blue);
 }
 
@@ -455,6 +471,11 @@ select:focus-visible {
 
     .header-container {
         padding: 0.9rem 1rem;
+    }
+
+    .logo-img {
+        width: 54px;
+        height: 54px;
     }
 
     .logo-emoji {
