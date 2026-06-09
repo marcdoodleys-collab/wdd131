@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Review | FutureTech</title>
+  <meta name="description" content="Submit your product review for FutureTech advanced components." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="logo-mark">
+      FutureTech
+      <span>Advanced Components</span>
+    </div>
+    <nav>
+      <a href="#">Products</a>
+      <a href="#">Support</a>
+      <a href="form.html" aria-current="page">Review</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="form-wrapper">
+
+      <div class="form-header">
+        <p class="eyebrow">Customer Feedback</p>
+        <h1>Submit a Product Review</h1>
+        <p>Fields marked <span style="color:var(--accent)">★</span> are required.</p>
+      </div>
+
+      <div class="form-card">
+        <form method="get" action="review.html" novalidate>
+
+          <!-- ===== PRODUCT NAME ===== -->
+          <div class="field-group">
+            <label for="product-name">
+              Product Name <span class="required-mark" aria-hidden="true">★</span>
+            </label>
+            <select id="product-name" name="product-name" required>
+              <option value="" disabled selected>Select a Product ...</option>
+              <!-- Options populated by form.js -->
+            </select>
+          </div>
+
+          <!-- ===== OVERALL RATING ===== -->
+          <div class="field-group">
+            <p class="field-label" id="rating-label">
+              Overall Rating <span class="required-mark" aria-hidden="true">★</span>
+            </p>
+            <!-- Row-reversed flex: 5 is leftmost visually but first in DOM-reverse order -->
+            <div class="star-rating" role="group" aria-labelledby="rating-label">
+              <input type="radio" id="star5" name="rating" value="5" required />
+              <label for="star5" title="5 stars">&#9733;</label>
+
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" title="4 stars">&#9733;</label>
+
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" title="3 stars">&#9733;</label>
+
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" title="2 stars">&#9733;</label>
+
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" title="1 star">&#9733;</label>
+            </div>
+            <span class="star-hint">Click a star to rate (1 = poor, 5 = excellent)</span>
+          </div>
+
+          <!-- ===== DATE OF INSTALLATION ===== -->
+          <div class="field-group">
+            <label for="install-date">
+              Date of Installation <span class="required-mark" aria-hidden="true">★</span>
+            </label>
+            <input
+              type="date"
+              id="install-date"
+              name="install-date"
+              required
+            />
+          </div>
+
+          <hr class="field-divider" />
+
+          <!-- ===== USEFUL FEATURES ===== -->
+          <div class="field-group">
+            <p class="field-label" id="features-label">Useful Features</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.8rem;">
+              Select all that apply.
+            </p>
+            <div class="checkbox-grid" role="group" aria-labelledby="features-label">
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-easy-install" name="features" value="Easy Installation" />
+                <span>Easy Installation</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-durability" name="features" value="Durability" />
+                <span>Durability</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-value" name="features" value="Value for Money" />
+                <span>Value for Money</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-performance" name="features" value="Performance" />
+                <span>Performance</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-design" name="features" value="Build Quality" />
+                <span>Build Quality</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" id="feat-support" name="features" value="Customer Support" />
+                <span>Customer Support</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ===== WRITTEN REVIEW ===== -->
+          <div class="field-group">
+            <label for="written-review">Written Review</label>
+            <textarea
+              id="written-review"
+              name="written-review"
+              placeholder="Share your experience with this product…"
+            ></textarea>
+          </div>
+
+          <hr class="field-divider" />
+
+          <!-- ===== USER NAME ===== -->
+          <div class="field-group">
+            <label for="username">Your Name <em style="font-size:0.75rem;font-family:var(--font-body);text-transform:none;letter-spacing:0;color:var(--text-muted);font-style:normal;">(optional)</em></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="e.g. Marty McFly"
+              autocomplete="name"
+            />
+          </div>
+
+          <!-- ===== SUBMIT ===== -->
+          <input
+            class="btn-submit"
+            type="submit"
+            value="Submit Review →"
+          />
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      &copy; <span id="year"></span> FutureTech Advanced Components &mdash;
+      Marc-Doodley SEMETUS &bull;
+      <a href="https://byui.edu" target="_blank" rel="noopener">BYU&ndash;Idaho</a>
+    </p>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script src="scripts/form.js"></script>
+</body>
+</html>
