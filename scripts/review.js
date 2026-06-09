@@ -47,6 +47,10 @@ function getProductName(id) {
 // Build summary on page load
 // ==============================
 document.addEventListener("DOMContentLoaded", () => {
+  // Footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   // Only increment if arrived via form submission (has query params)
   const hasParams = window.location.search.length > 1;
   const count = hasParams ? incrementCount() : getCount();
